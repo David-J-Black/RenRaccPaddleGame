@@ -12,15 +12,15 @@ Because this is the best way to collaboratively work on software. I can make cha
 2. Click the field in the upper left corner, and Click **Add \> Clone Repository** _(ignore the PaddleBoatGame, that is a different project unrelated to these instructions)_
 ![alt text](InstallInstructionDocs/clone_repository.png)
 
-3. Select the **URL** tab and paste the URL, select the folder you want to save the project in, and click **Clone**:
-```https://github.com/David-J-Black/RenRaccPaddleGame```
-![alt text](InstallInstructionDocs/add_game_url.png)
+3. Select the **URL** tab and paste the URL: ```https://github.com/David-J-Black/RenRaccPaddleGame```
+  - select the folder you want to save the project in, and click **Clone**:
+    ![alt text](InstallInstructionDocs/add_game_url.png)
 
 4. Find the **project.godot** file in the Godot project loader
 
 ![alt text](InstallInstructionDocs/godot_open_file.png)
 
-5. If you want to run the game, hit the run game button 😏
+5. If you want to run the game, hit the **Run Project** button 😏
 
 ![alt text](InstallInstructionDocs/run_game.png)
 
