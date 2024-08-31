@@ -1,0 +1,3 @@
+[background arg="res://DialogicAssets/Images/leavensworth.png" fade="0.0"]
+join Sardine 1
+Sardine: "Hello"
