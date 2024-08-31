@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bt4b4h5ts8adk"
-path="res://.godot/imported/sardine_default.png-5ad69706cdec5a29010bfc16f1835a7f.ctex"
+uid="uid://bjyqbrakruf37"
+path="res://.godot/imported/clone_repository.png-ed6620fc2143855ed2f4dd41a0226134.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogicAssets/Images/sardine_default.png"
-dest_files=["res://.godot/imported/sardine_default.png-5ad69706cdec5a29010bfc16f1835a7f.ctex"]
+source_file="res://InstallInstructionDocs/clone_repository.png"
+dest_files=["res://.godot/imported/clone_repository.png-ed6620fc2143855ed2f4dd41a0226134.ctex"]
 
 [params]
 
