@@ -35,3 +35,6 @@ Now you have a copy of the project that keeps track of your changes If you want 
   - When you download other people's changes, there is an interface for clicking and choosing conflicting changes (AKA Files that were touched that you also made change to). I swear this stuff will be less intimidating as soon as you get it going.
 
 having a project in git is like quicksaving in Skyrim. When you commit code, you are saving a version of the project permanently. If you fuck up really bad, you can restore your project to a commit. It's incredible, this shit will change your life IDK.
+
+You can see the history of who's changed one in the history tab
+![alt text](InstallInstructionDocs/github_client_example.png)
