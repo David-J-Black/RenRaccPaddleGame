@@ -1,0 +1,14 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://7jb70ivemlvo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbjsk"]
+content_margin_right = 10.0
+bg_color = Color(0.3018, 0.599367, 1, 1)
+
+[resource]
+/styles/TesteStyleboxItem = null
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
+Panel/styles/panel = SubResource("StyleBoxFlat_bbjsk")
+PanelContainer/styles/panel = null

@@ -1,1 +1,10 @@
+res://scenes/MapLocation.tscn
+res://themes/demo_theme.tres
+res://scenes/MapViewer.tscn
+res://scenes/MapLocation.gd
+res://scenes/MapViewer.gd
 res://scenes/main.tscn
+res://scripts/main.gd
+res://scenes/MapView.gd
+res://scripts/services/DialogService.gd
+res://addons/dialogic/Modules/Text/node_dialog_text.gd

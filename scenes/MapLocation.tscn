@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce4rop4gwa27u"]
+
+[ext_resource type="Script" path="res://scenes/MapLocation.gd" id="1_f36im"]
+[ext_resource type="Texture2D" uid="uid://g5wfoj0ws1qc" path="res://images/house_icon.png" id="2_e3o1x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3by7k"]
+radius = 75.7166
+
+[sub_resource type="LabelSettings" id="LabelSettings_s8uqj"]
+font_size = 64
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Location" type="Node2D"]
+script = ExtResource("1_f36im")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_3by7k")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -2)
+scale = Vector2(0.570313, 0.570313)
+texture = ExtResource("2_e3o1x")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -289.0
+offset_top = -306.0
+offset_right = 286.0
+offset_bottom = -80.0
+text = "Test"
+label_settings = SubResource("LabelSettings_s8uqj")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
