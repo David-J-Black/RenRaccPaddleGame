@@ -1,5 +1,5 @@
 extends Node2D
-class_name MapView
+class_name Map
 
 #signal location_selected(name: string)
 
@@ -45,10 +45,12 @@ func rescale():
 	self.scale = Vector2(new_scale_value, new_scale_value)
 
 	
-func location_node_selected(name: String):
-	print("You selected: ", name)
-	queue_free()
-	DialogService.start_dialog(name)
+func location_node_selected(next_scene_info: GameSceneInformation):
+	print("Processing next scene", next_scene_info.scene_name)
+	
+	if next_scene_info.close_map:
+		queue_free()
+	DialogService.start_dialog(next_scene_info.scene_name)
 	
 func get_locations() -> Array[MapLocation]:
 	var children = locations.get_children()

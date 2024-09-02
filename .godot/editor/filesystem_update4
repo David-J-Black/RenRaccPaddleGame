@@ -12,3 +12,11 @@ res://DialogicAssets/timelines/sandy_scene.dtl
 res://DialogicAssets/Characters/Sardine.dch
 res://DialogicAssets/Characters/Sandy.dch
 res://addons/dialogic/Editor/Events/styles/InputFieldsStyle.tres
+res://scenes/Map.gd
+res://scripts/services/MapService.gd
+res://types/global_types.gd
+res://types/GameSceneInformation.gd
+res://types/SceneType.gd
+res://types/Enums.gd
+res://DialogicAssets/timelines/demo_timeline.dtl
+res://scenes/maps/bellingham2.tscn

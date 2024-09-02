@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var starting_scene_name: String = "bellingham2"
+
 @onready var control = $Control
 
 func _ready() -> void:
@@ -10,8 +12,7 @@ func _ready() -> void:
 	adjust_size()
 	get_viewport().connect("size_changed", Callable(self, "adjust_size"))
 	
-	#start_dialog()
-	MapService.open_window()
+	MapService.load_map(starting_scene_name)
 
 func load_map():
 	MapService.render_map("bellingham")

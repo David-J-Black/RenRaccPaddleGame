@@ -7,8 +7,8 @@
 radius = 75.7166
 
 [sub_resource type="LabelSettings" id="LabelSettings_s8uqj"]
-font_size = 64
-outline_size = 10
+font_size = 128
+outline_size = 30
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Location" type="Node2D"]
@@ -26,9 +26,9 @@ texture = ExtResource("2_e3o1x")
 
 [node name="Label" type="Label" parent="."]
 offset_left = -289.0
-offset_top = -306.0
+offset_top = -297.0
 offset_right = 286.0
-offset_bottom = -80.0
+offset_bottom = -71.0
 text = "Test"
 label_settings = SubResource("LabelSettings_s8uqj")
 horizontal_alignment = 1

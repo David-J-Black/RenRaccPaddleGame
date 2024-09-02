@@ -1,33 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbtgterk5kx8c"]
+[gd_scene load_steps=3 format=3 uid="uid://dbtgterk5kx8c"]
 
 [ext_resource type="Script" path="res://scenes/MapViewer.gd" id="1_ri1dc"]
-[ext_resource type="Script" path="res://scenes/MapView.gd" id="3_cdtv0"]
-[ext_resource type="PackedScene" uid="uid://ce4rop4gwa27u" path="res://scenes/MapLocation.tscn" id="3_htmov"]
-[ext_resource type="Texture2D" uid="uid://f0pug1kihtgg" path="res://images/downtown_bellingham.png" id="3_k7yh1"]
+[ext_resource type="PackedScene" uid="uid://cxub4stekumms" path="res://scenes/maps/bellingham2.tscn" id="2_dj45y"]
 
 [node name="MapViewer" type="Node2D"]
 script = ExtResource("1_ri1dc")
 
-[node name="MapView" type="Node2D" parent="."]
-script = ExtResource("3_cdtv0")
-
-[node name="MapSprite" type="Sprite2D" parent="MapView"]
-scale = Vector2(0.398542, 0.398542)
-texture = ExtResource("3_k7yh1")
-centered = false
-
-[node name="Locations" type="Node2D" parent="MapView"]
-
-[node name="SardineHouse" parent="MapView/Locations" instance=ExtResource("3_htmov")]
-position = Vector2(649, 200)
-scale = Vector2(0.394384, 0.394384)
-display_name = "Sardine's House"
-dialog_start_name = "demo_timeline"
-
-[node name="SandyHouse" parent="MapView/Locations" instance=ExtResource("3_htmov")]
-position = Vector2(324, 105)
-scale = Vector2(0.25, 0.25)
-display_name = "Don't Click This"
-dialog_start_name = "sandy_scene"
+[node name="Map" parent="." instance=ExtResource("2_dj45y")]
 
 [node name="Node2D" type="Node2D" parent="."]
