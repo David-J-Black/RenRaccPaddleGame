@@ -8,20 +8,20 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "sardine_default",
-"description": "PaddleBoat's Dog",
-"display_name": "Sardine",
+"default_portrait": "default",
+"description": "",
+"display_name": "Sandy",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"sardine_default": {
+"default": {
 "export_overrides": {
-"image": "\"res://DialogicAssets/Images/sardine_default.png\""
+"image": "\"Sandy doodle.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1.0,
+"scale": 0.2,
 "scene": ""
 }
 },

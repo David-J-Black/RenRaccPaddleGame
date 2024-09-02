@@ -19,9 +19,15 @@ centered = false
 [node name="Locations" type="Node2D" parent="MapView"]
 
 [node name="SardineHouse" parent="MapView/Locations" instance=ExtResource("3_htmov")]
-position = Vector2(782, 172)
+position = Vector2(649, 200)
 scale = Vector2(0.394384, 0.394384)
 display_name = "Sardine's House"
 dialog_start_name = "demo_timeline"
+
+[node name="SandyHouse" parent="MapView/Locations" instance=ExtResource("3_htmov")]
+position = Vector2(324, 105)
+scale = Vector2(0.25, 0.25)
+display_name = "Don't Click This"
+dialog_start_name = "sandy_scene"
 
 [node name="Node2D" type="Node2D" parent="."]

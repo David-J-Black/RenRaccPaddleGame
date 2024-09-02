@@ -8,3 +8,7 @@ res://scripts/main.gd
 res://scenes/MapView.gd
 res://scripts/services/DialogService.gd
 res://addons/dialogic/Modules/Text/node_dialog_text.gd
+res://DialogicAssets/timelines/sandy_scene.dtl
+res://DialogicAssets/Characters/Sardine.dch
+res://DialogicAssets/Characters/Sandy.dch
+res://addons/dialogic/Editor/Events/styles/InputFieldsStyle.tres

@@ -48,9 +48,7 @@ func rescale():
 func location_node_selected(name: String):
 	print("You selected: ", name)
 	queue_free()
-	#DialogService.start_dialog(name)
-	DialogService.start_dialog("demo_timeline")
-	#Dialogic.start("demo_timeline")
+	DialogService.start_dialog(name)
 	
 func get_locations() -> Array[MapLocation]:
 	var children = locations.get_children()

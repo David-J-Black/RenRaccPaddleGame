@@ -24,11 +24,13 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Sandy": "res://DialogicAssets/Characters/Sandy.dch",
 "Sardine": "res://DialogicAssets/Characters/Sardine.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
-"demo_timeline": "res://DialogicAssets/timelines/demo_timeline.dtl"
+"demo_timeline": "res://DialogicAssets/timelines/demo_timeline.dtl",
+"sandy_scene": "res://DialogicAssets/timelines/sandy_scene.dtl"
 }
 
 [editor_plugins]
