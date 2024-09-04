@@ -17,7 +17,7 @@ label pet_loop
 Sardine: ...
 Sardine (sardine_default): You feel deep empty eyes stare at you as you stroke the cow spotted creature
 - Stop petting her
-	Sardine: HNNNNN- 
+	Sardine: HNNNNN-
 	She emits the most pathetic noise you've had the displeasure of being present for
 	- Sorry! (Keep Petting her)
 		jump pet_loop

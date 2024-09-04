@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://cc4b3fduech2g"]
+
+[ext_resource type="Script" path="res://scenes/Map.gd" id="1_msao8"]
+[ext_resource type="Texture2D" uid="uid://f0pug1kihtgg" path="res://images/downtown_bellingham.png" id="2_hlhwl"]
+[ext_resource type="PackedScene" uid="uid://ce4rop4gwa27u" path="res://scenes/MapLocation.tscn" id="3_shuur"]
+
+[node name="MapView" type="Node2D"]
+script = ExtResource("1_msao8")
+
+[node name="MapSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.398542, 0.398542)
+texture = ExtResource("2_hlhwl")
+centered = false
+
+[node name="Locations" type="Node2D" parent="."]
+
+[node name="SardineHouse" parent="Locations" instance=ExtResource("3_shuur")]
+position = Vector2(649, 200)
+scale = Vector2(0.5, 0.5)
+display_name = "Sardine's House"
+scene_name = "demo_timeline"
+
+[node name="SandyEvent" parent="Locations" instance=ExtResource("3_shuur")]
+position = Vector2(322, 126)
+scale = Vector2(0.5, 0.5)
+display_name = "Don't Click This"
+scene_name = "sandy_scene"

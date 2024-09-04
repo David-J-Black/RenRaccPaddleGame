@@ -15,11 +15,6 @@ func _ready():
 	map_viewer.name = "MapView"
 	add_child(map_viewer)
 	print("MapView added to scene: Name:", map_viewer.name)
-
-func render_map(name: String):
-	var map_location = "res://scenes/maps" + name + ".tscn"
-	
-	#var map: Node2d = load(map_location)
 	
 func load_map(map_name: String):
 	assert(map_name != null, "Invalid map name! [%s]" % map_name)

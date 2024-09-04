@@ -19,19 +19,23 @@ config/icon="res://icon.svg"
 
 MapService="*res://scripts/services/MapService.gd"
 DialogService="*res://scripts/services/DialogService.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 GlobalTypes="*res://types/global_types.gd"
+SaveService="*res://scripts/services/SaveService.gd"
+PlayerService="*res://scripts/services/PlayerService.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={
 "Sandy": "res://DialogicAssets/Characters/Sandy.dch",
 "Sardine": "res://DialogicAssets/Characters/Sardine.dch",
+"Scrangus": "res://DialogicAssets/Characters/Scrangus.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
 "demo_timeline": "res://DialogicAssets/timelines/demo_timeline.dtl",
-"sandy_scene": "res://DialogicAssets/timelines/sandy_scene.dtl"
+"sandy_scene": "res://DialogicAssets/timelines/sandy_scene.dtl",
+"scrangus_alley": "res://DialogicAssets/timelines/scrangus_alley.dtl"
 }
 glossary/default_case_sensitive=true
 variables={}

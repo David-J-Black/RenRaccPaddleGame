@@ -7,7 +7,7 @@
 radius = 75.7166
 
 [sub_resource type="LabelSettings" id="LabelSettings_s8uqj"]
-font_size = 128
+font_size = 60
 outline_size = 30
 outline_color = Color(0, 0, 0, 1)
 
@@ -20,16 +20,22 @@ script = ExtResource("1_f36im")
 shape = SubResource("CircleShape2D_3by7k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -2)
-scale = Vector2(0.570313, 0.570313)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_e3o1x")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -289.0
-offset_top = -297.0
-offset_right = 286.0
-offset_bottom = -71.0
-text = "Test"
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -287.0
+offset_top = -295.0
+offset_right = 288.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Placeholder"
 label_settings = SubResource("LabelSettings_s8uqj")
 horizontal_alignment = 1
 vertical_alignment = 2
