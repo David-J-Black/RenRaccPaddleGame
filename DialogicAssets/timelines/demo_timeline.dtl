@@ -27,5 +27,5 @@ Sardine (sardine_default): You feel deep empty eyes stare at you as you stroke t
 	jump pet_loop
 label end
 leave Sardine
-do MapService.load_map("bellingham2")
+do MapService.load_map("bellingham_pt_1")
 [end_timeline]

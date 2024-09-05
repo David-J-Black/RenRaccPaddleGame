@@ -23,3 +23,11 @@ func adjust_size():
 	assert(background is TextureRect && background.texture is Texture, "Background is invalid!")
 	background.size = get_viewport().get_size()
 	background.z_index = -1
+
+func _input(event: InputEvent):
+	if event.is_action_pressed("ui_menu"):
+		var save_menu = get_node("SaveMenu")
+		if save_menu:
+			save_menu.queue_free()
+		else:
+			SaveService.open_save_menu()
