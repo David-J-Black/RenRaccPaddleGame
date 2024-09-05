@@ -19,9 +19,8 @@ config/icon="res://icon.svg"
 
 MapService="*res://scripts/services/MapService.gd"
 DialogService="*res://scripts/services/DialogService.gd"
-GlobalTypes="*res://types/global_types.gd"
 SaveService="*res://scripts/services/SaveService.gd"
-PlayerService="*res://scripts/services/PlayerService.gd"
+GameService="*res://scripts/services/GameService.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
