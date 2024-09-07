@@ -2,4 +2,4 @@
 join Sandy 1
 Sandy: Oh jesus christ can you PLEASE come back later!!
 Sandy: Like, RIGHT NOW? Why does it have to be RIGHT NOW!!
-do MapService.load_map("bellingham2")
+do MapService.load_map("bellingham_pt_1")

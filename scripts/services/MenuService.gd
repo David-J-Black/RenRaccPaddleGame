@@ -7,7 +7,7 @@ var main_menu: Control
 func _ready() -> void:
 	main_menu = MainMenu.instantiate()
 	main_menu.name = "MainMenu"
-	var parent = get_tree().root.get_node("Main")
+	var parent = get_node("/root/Main/MenuCanvas")
 
 	# Move to front
 	parent.add_child(main_menu)
@@ -18,11 +18,10 @@ func _input(event: InputEvent):
 		toggle_main_menu()
 
 func toggle_main_menu():
-	print("Toggling main menu", main_menu.visible)
-	main_menu.visible = !main_menu.visible
+	set_visible(!main_menu.visible)
 
-func open_main_menu() -> void:
-	main_menu.visible = true
+func set_visible(visibility: bool) -> void:
+	main_menu.visible = visibility
+	Dialogic.paused = visibility
+	print("Is dialogic paused? [%s]" % Dialogic.paused)
 	
-func close_main_Menu() -> void:
-	main_menu.vislble = false

@@ -10,9 +10,8 @@ func _ready() -> void:
 	# Everytime the window size changes, we will change this element
 	_adjust_size()
 	get_viewport().connect("size_changed", Callable(self, "_adjust_size"))
+	MenuService.set_visible(true)
 	
-	MenuService.open_main_menu()
-
 func _adjust_size():
 	
 	# Get and ensure the background is indeed, a background

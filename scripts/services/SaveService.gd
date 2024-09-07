@@ -24,10 +24,10 @@ func load_save_file(save_name: String):
 
 	# Populate a game scene information object
 	var response := GameSceneInformation.new()
-	response = _dict_to_class(parse_result, response)
+	response = _save_convert(parse_result, response)
 
 	GameService.apply_save(response)
-	print("Finished loading save")
+	print("Finished loading save", JSON.stringify(parse_result, " "))
 	
 func save_game(local_save_name: String) -> void:
 	if local_save_name == null:
@@ -104,7 +104,8 @@ func open_save_menu():
 	instance.visible = true
 	instance.position = get_viewport().size / 2
 
-func _dict_to_class(dict: Dictionary, object: Object) -> Object:
+# Convert the save json/Dict to an object
+func _save_convert(dict: Dictionary, object: Object) -> GameSceneInformation:
 	if dict == null:
 		print("INVALID DICTIONARY! [%s]" % dict)
 		return
@@ -114,10 +115,21 @@ func _dict_to_class(dict: Dictionary, object: Object) -> Object:
 	
 	var properties: Array = object.get_property_list()
 	
+	# For every entry in the save file
 	for key in dict.keys():
+		
+		# For every property in a Game
 		for property in properties:
 			if property.name == key:
-				object.set(key, dict[key])
-				break
+				var property_value = dict[key]
+				
+				# If one of the save properties is an enum, stick it in this match statement
+				match key:
+					"scene_type":
+						assert(property_value is String, "INVALID SCENE TYPE")
+						property_value = Enum.scene_type_from_string(property_value)
+
+				object.set(key, property_value)
 	
+	assert(object is GameSceneInformation, "INVALID SAVE FILE")
 	return object

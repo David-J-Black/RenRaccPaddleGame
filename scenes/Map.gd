@@ -31,18 +31,21 @@ func rescale():
 	assert(texture is Texture2D, "INVALID TEXTURE")
 	
 	var texture_size: Vector2 = init_map_scale * texture.get_size()
+	
+	# We want to make the map as wide as the viewport
 	# If you don't wrap these in floats your return value is FUCKED
-	var new_scale_value: float = float(viewport_size[0]) / float(texture_size[0])
+	var new_scale: float = float(viewport_size.x) / float(texture_size.x)
 	
-	# Let's see if the new scale makes the image too tall...
-	var too_tall: bool = texture_size[1] * new_scale_value > viewport_size[1]
+	# Let's see if the new scale makes the map too short...
+	var too_tall: bool = texture_size.y * new_scale > viewport_size.y
 	
-	# If so, then we will shrink the scale so the image fits within the viewport
 	if too_tall:
-		new_scale_value = float(viewport_size[1]) / float(texture_size[1])
+		new_scale = float(viewport_size.y) / float(texture_size.y)
 	
 	# Apply the new scale
-	self.scale = Vector2(new_scale_value, new_scale_value)
+	self.scale = Vector2.ONE * new_scale
+	
+	self.position = -(texture_size * new_scale - Vector2(viewport_size)) / 2
 
 	
 func location_node_selected(next_scene_info: GameSceneInformation):

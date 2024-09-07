@@ -22,20 +22,19 @@ DialogService="*res://scripts/services/DialogService.gd"
 SaveService="*res://scripts/services/SaveService.gd"
 GameService="*res://scripts/services/GameService.gd"
 MenuService="*res://scripts/services/MenuService.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={
 "Sandy": "res://DialogicAssets/Characters/Sandy.dch",
 "Sardine": "res://DialogicAssets/Characters/Sardine.dch",
-"Scrangus": "res://DialogicAssets/Characters/Scrangus.dch",
-"unit_test_character": "res://Tests/Resources/unit_test_character.dch"
+"Scrangus": "res://DialogicAssets/Characters/Scrangus.dch"
 }
 directories/dtl_directory={
-"demo_timeline": "res://DialogicAssets/timelines/demo_timeline.dtl",
 "sandy_scene": "res://DialogicAssets/timelines/sandy_scene.dtl",
+"sardine_scene": "res://DialogicAssets/timelines/sardine_scene.dtl",
 "scrangus_alley": "res://DialogicAssets/timelines/scrangus_alley.dtl"
 }
 glossary/default_case_sensitive=true

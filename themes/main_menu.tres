@@ -1,16 +1,26 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://7jb70ivemlvo"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://7jb70ivemlvo"]
 
-[sub_resource type="SystemFont" id="SystemFont_amewx"]
+[ext_resource type="FontFile" uid="uid://d2cc0n7bthcp5" path="res://fonts/Quicksand-VariableFont_wght.ttf" id="1_rk6aw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_brp1l"]
+bg_color = Color(0.472253, 0.79596, 0.994867, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7h12"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbjsk"]
 content_margin_right = 10.0
-bg_color = Color(0.301961, 0.6, 1, 0)
+bg_color = Color(0.111088, 0.161304, 0.203934, 0.780392)
 
 [resource]
+default_font = ExtResource("1_rk6aw")
+default_font_size = 4
 /styles/TesteStyleboxItem = null
 Button/font_sizes/font_size = 32
-Button/fonts/font = SubResource("SystemFont_amewx")
-HBoxContainer/constants/separation = 10
+Button/fonts/font = ExtResource("1_rk6aw")
+Button/styles/hover = SubResource("StyleBoxFlat_brp1l")
+Button/styles/normal = SubResource("StyleBoxFlat_p7h12")
+HBoxContainer/constants/separation = 20
 Label/font_sizes/font_size = 37
 MarginContainer/constants/margin_bottom = 10
 MarginContainer/constants/margin_left = 10
@@ -18,4 +28,4 @@ MarginContainer/constants/margin_right = 10
 MarginContainer/constants/margin_top = 10
 Panel/styles/panel = SubResource("StyleBoxFlat_bbjsk")
 PanelContainer/styles/panel = null
-VBoxContainer/constants/separation = 5
+VBoxContainer/constants/separation = 20

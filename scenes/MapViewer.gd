@@ -28,6 +28,11 @@ func load_map(map_name: String):
 	var file_path: String = "res://scenes/maps/" + map_name + ".tscn"
 	var new_map: Resource = load(file_path) 
 	assert(new_map != null, "Map [%s] not found" % map_name)
+
+	# If we already have a map loaded, get that bitch outta here!
+	if map != null:
+		map.queue_free()
+
 	var instiated_map = new_map.instantiate() as Map
 	assert(instiated_map != null and instiated_map is Map, "Invalid Map Scene [%s]" % map_name)
 	map = instiated_map

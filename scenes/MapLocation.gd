@@ -34,7 +34,7 @@ func _get_map():
 	map = parent.get_parent()
 	assert(map is Map, "Missing expected MapView parent! Make sure this Location is a child to the Locations node!")
 		
-func resize(map_scale: float):
+func _on_resize(map_scale: float):
 		position = initial_position * map_scale
 		scale = initial_scale * map_scale
 		print ("New node position for %s!" % name, position)

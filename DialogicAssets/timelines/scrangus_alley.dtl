@@ -15,6 +15,6 @@ Scrangus: Uh--
 		Scrangus: Pork phad see... wait no that's chicken
 	- Do you... would you like, if I got you a burger?
 - (Leave rapidly without saying anything)
-	Scrangus: ?... Shit I hope I didn't know them lol 
+	Scrangus: ?... Shit I hope I didn't know them lol
 label end
-do MapService.load_map("moscow_ch_1.tscn")
+do MapService.load_map("moscow_pt_1.tscn")

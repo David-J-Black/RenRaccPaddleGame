@@ -4,8 +4,9 @@
 [ext_resource type="Script" path="res://scenes/menus/MainMenu.gd" id="2_3ehjj"]
 [ext_resource type="PackedScene" uid="uid://gvvvvwllsk7w" path="res://scenes/menus/SaveMenu.tscn" id="4_pqcqf"]
 
-[node name="MainMenu" type="Panel"]
+[node name="MainMenu" type="Control"]
 layout_direction = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -14,7 +15,12 @@ grow_vertical = 2
 theme = ExtResource("1_8shle")
 script = ExtResource("2_3ehjj")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="MainMenuPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 648.0
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMenuPanel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,29 +28,32 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Buttons" type="VBoxContainer" parent="HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MainMenuPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Buttons" type="VBoxContainer" parent="MainMenuPanel/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
+alignment = 1
 
-[node name="Save" type="Button" parent="HBoxContainer/Buttons"]
+[node name="Save" type="Button" parent="MainMenuPanel/MarginContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 text = "Saves"
 
-[node name="Map" type="Button" parent="HBoxContainer/Buttons"]
-layout_mode = 2
-text = "Map"
-
-[node name="Close" type="Button" parent="HBoxContainer/Buttons"]
+[node name="Close" type="Button" parent="MainMenuPanel/MarginContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 text = "Close
 "
 
-[node name="Window" type="MarginContainer" parent="HBoxContainer"]
+[node name="Map" type="Button" parent="MainMenuPanel/MarginContainer/HBoxContainer/Buttons"]
+visible = false
+layout_mode = 2
+text = "Map"
+
+[node name="Window" type="MarginContainer" parent="MainMenuPanel/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="SaveMenu" parent="HBoxContainer/Window" instance=ExtResource("4_pqcqf")]
+[node name="SaveMenu" parent="MainMenuPanel/MarginContainer/HBoxContainer/Window" instance=ExtResource("4_pqcqf")]
 layout_mode = 2
-
-[connection signal="pressed" from="HBoxContainer/Buttons/Map" to="." method="_on_load_pressed"]

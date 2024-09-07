@@ -11,3 +11,6 @@ offset_right = 1000.0
 offset_bottom = 683.0
 texture = ExtResource("2_qy44q")
 stretch_mode = 1
+
+[node name="MenuCanvas" type="CanvasLayer" parent="."]
+layer = 2

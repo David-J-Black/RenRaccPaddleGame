@@ -13,24 +13,10 @@ var map_viewer: MapViewer
 func _ready():
 	map_viewer = MapViewer.instantiate()
 	map_viewer.name = "MapView"
-	add_child(map_viewer)
+	get_node("/root/Main/Background").add_sibling(map_viewer)
 	print("MapView added to scene: Name:", map_viewer.name)
 	
 func load_map(map_name: String):
 	assert(map_name != null, "Invalid map name! [%s]" % map_name)
-	if map_viewer != null:
-		map_viewer.load_map(map_name)
-	else:
-		_new_map_viewer()
-		map_viewer.load_map(map_name)
-
-# A private function to make a new map viewer
-func _new_map_viewer():
-	if map_viewer != null:
-		print("Warn: There is already a map viewer! Cannot make a new one")
-		return
-	
-	map_viewer = MapViewer.instantiate()
-	map_viewer.name = "MapView"
-	add_child(map_viewer)
-	print("MapView added to scene: Name:", map_viewer.name)
+	assert(map_viewer != null, "WHERE THE FUCK IS THE MAP VIEWER? JESUS FUCKING CHRIST DUDE!")	
+	map_viewer.load_map(map_name)
