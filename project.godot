@@ -21,7 +21,9 @@ MapService="*res://scripts/services/MapService.gd"
 DialogService="*res://scripts/services/DialogService.gd"
 SaveService="*res://scripts/services/SaveService.gd"
 GameService="*res://scripts/services/GameService.gd"
+MenuService="*res://scripts/services/MenuService.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [dialogic]
 

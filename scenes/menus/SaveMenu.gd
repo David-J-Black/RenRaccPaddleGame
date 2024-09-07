@@ -1,18 +1,9 @@
 extends Control
 
-@onready var save_list: VBoxContainer = $Load/MarginContainer/VBoxContainer/PanelContainer/MarginContainer/SaveList
-@onready var load_menu: Container = $Load
-@onready var main_menu: Container = $Main
-
-func _ready() -> void:
-	main_menu.visible = true
-	load_menu.visible = false
-
-
+@onready var save_list: VBoxContainer = $SaveMenu/PanelContainer/MarginContainer/SaveList
+	
 func _on_load_pressed() -> void:
-	load_menu.visible = true
-	main_menu.visible = false
-	bring_menu_to_front(load_menu)
+	self.visible = true
 	
 	# Populate the save list
 	var saves: Array[String] = SaveService.get_save_names()

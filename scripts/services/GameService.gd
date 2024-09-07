@@ -13,6 +13,8 @@ func apply_save(save_state: GameSceneInformation):
 		Enum.SceneType.DIALOG:
 			DialogService.start_dialog(save_state.scene_name)
 	
+# Grabe the entire "current state" of the game
+# Including, what time it is, where the user currently is
 func get_state() -> GameSceneInformation:
 	return _scene_info
 

@@ -1,14 +1,21 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://7jb70ivemlvo"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://7jb70ivemlvo"]
+
+[sub_resource type="SystemFont" id="SystemFont_amewx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbjsk"]
 content_margin_right = 10.0
-bg_color = Color(0.3018, 0.599367, 1, 1)
+bg_color = Color(0.301961, 0.6, 1, 0)
 
 [resource]
 /styles/TesteStyleboxItem = null
+Button/font_sizes/font_size = 32
+Button/fonts/font = SubResource("SystemFont_amewx")
+HBoxContainer/constants/separation = 10
+Label/font_sizes/font_size = 37
 MarginContainer/constants/margin_bottom = 10
 MarginContainer/constants/margin_left = 10
 MarginContainer/constants/margin_right = 10
 MarginContainer/constants/margin_top = 10
 Panel/styles/panel = SubResource("StyleBoxFlat_bbjsk")
 PanelContainer/styles/panel = null
+VBoxContainer/constants/separation = 5

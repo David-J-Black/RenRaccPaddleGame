@@ -24,12 +24,12 @@ func load_save_file(save_name: String):
 
 	# Populate a game scene information object
 	var response := GameSceneInformation.new()
-	response = dict_to_class(parse_result, response)
+	response = _dict_to_class(parse_result, response)
 
 	GameService.apply_save(response)
 	print("Finished loading save")
 	
-func commit_save_state(local_save_name: String) -> void:
+func save_game(local_save_name: String) -> void:
 	if local_save_name == null:
 		local_save_name = save_name
 	
@@ -104,7 +104,7 @@ func open_save_menu():
 	instance.visible = true
 	instance.position = get_viewport().size / 2
 
-func dict_to_class(dict: Dictionary, object: Object) -> Object:
+func _dict_to_class(dict: Dictionary, object: Object) -> Object:
 	if dict == null:
 		print("INVALID DICTIONARY! [%s]" % dict)
 		return
