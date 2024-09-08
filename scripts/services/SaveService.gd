@@ -34,15 +34,15 @@ func save_game(local_save_name: String) -> void:
 		local_save_name = save_name
 	
 	# Grab the game informationn
-	var game_state: GameSceneInformation = GameService.get_state()
-	var game_string: String = JSON.stringify(game_state, "	")
+	var game_state: Dictionary = GameService.get_state_dict()
+
 
 	# Grab file
 	var file_address = FILE_LOCATION + local_save_name + ".json"
 	var file = FileAccess.open(file_address, FileAccess.WRITE)
 
 	# Save that bitch!
-	file.store_string(game_string)
+	file.store_string(JSON.stringify(game_state, "   "))
 	file.close()
 
 	save_name = local_save_name

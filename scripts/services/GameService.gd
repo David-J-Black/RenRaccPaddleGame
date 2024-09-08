@@ -7,7 +7,7 @@ func apply_save(save_state: GameSceneInformation):
 	_scene_info = save_state
 	
 	# Blow up any running dialog scenes
-	DialogService.stop_dialog()
+	#DialogService.stop_dialog()
 	MenuService.set_visible(false)
 	
 	# Load scene
@@ -25,7 +25,31 @@ func apply_save(save_state: GameSceneInformation):
 # Including, what time it is, where the user currently is
 func get_state() -> GameSceneInformation:
 	return _scene_info
+	
+func get_state_dict() -> Dictionary:
+	var response: Dictionary = {}
+	
+	response["scene_name"] = _scene_info.scene_name
+	response["scene_type"] = Enum.scene_type_to_string(_scene_info.scene_type)
+	response["map_events"] = _scene_info.map_events
+	response["conditionals"] = _scene_info.conditionals
+	# TODO: Add map events and conditionals
+	
+	return response
 
 # load up the events that occur upon a map getting loaded
 func get_map_events(map_name: String) -> Array[MapEvent]:
 	return _scene_info.map_events[map_name]
+
+func set_scene_info(scene_name: String, scene_type: Enum.SceneType):
+	assert(scene_name != null or scene_name != '', "INVALID SCENE NAME")
+	assert(scene_type != null, "INVALID SCENE TYPE")
+	self._scene_info.scene_name = scene_name
+	self._scene_info.scene_type = scene_type
+
+func get_scene_name() -> String:
+	return _scene_info.scene_name
+	
+func set_scene(scene_name: String, scene_type: Enum.SceneType) -> void:
+	_scene_info.scene_name = scene_name
+	_scene_info.scene_type = scene_type

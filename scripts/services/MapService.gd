@@ -8,7 +8,6 @@ var MapLocation := preload("res://scenes/MapLocation.tscn")
 # in them and they will exist as part of the scene
 var locations: Node = Node.new()
 var map_viewer: MapViewer
-#func _ready():
 
 func _ready():
 	map_viewer = MapViewer.instantiate()
@@ -16,7 +15,12 @@ func _ready():
 	get_node("/root/Main/Background").add_sibling(map_viewer)
 	print("MapView added to scene: Name:", map_viewer.name)
 	
-func load_map(map_name: String):
-	assert(map_name != null, "Invalid map name! [%s]" % map_name)
-	assert(map_viewer != null, "WHERE THE FUCK IS THE MAP VIEWER? JESUS FUCKING CHRIST DUDE!")	
-	map_viewer.load_map(map_name)
+func load_map(new_map_name: String):
+	if (new_map_name != null):
+		GameService.set_scene(new_map_name, Enum.SceneType.MAP)
+	else:
+		new_map_name = GameService.get_scene_name()
+		
+	assert(GameService.get_scene_name() != null, "No map, cannot load map!")
+	
+	map_viewer.load_map(GameService.get_scene_name())

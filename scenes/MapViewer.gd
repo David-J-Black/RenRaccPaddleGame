@@ -25,6 +25,7 @@ func resize():
 	
 # Loads a map from the scenes/maps folder
 func load_map(map_name: String):
+	assert(map_name != null, "No map name given, c'mon man jesus christ")
 	var file_path: String = "res://scenes/maps/" + map_name + ".tscn"
 	var new_map: Resource = load(file_path) 
 	assert(new_map != null, "Map [%s] not found" % map_name)
