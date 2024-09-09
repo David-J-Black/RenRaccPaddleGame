@@ -27,3 +27,9 @@ static func scene_type_from_string(scene_type_string: String) -> SceneType:
 static func scene_type_to_string(scene_type: SceneType) -> String:
 	assert(scene_type_names.has(scene_type), "INVALID SCENE TYPE! CANNOT CONVERT TO STRING!")
 	return scene_type_names[scene_type] as String
+
+
+enum MenuState {
+	SAVE,
+	JOURNAL
+}

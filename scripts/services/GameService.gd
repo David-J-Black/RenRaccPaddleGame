@@ -9,7 +9,7 @@ func apply_save(save_state: GameSceneInformation):
 	# Blow up any running dialog scenes
 	#DialogService.stop_dialog()
 	MenuService.set_visible(false)
-	
+
 	# Load scene
 	print("Scene type we are applying [%s]" % save_state.scene_type)
 	match(save_state.scene_type):

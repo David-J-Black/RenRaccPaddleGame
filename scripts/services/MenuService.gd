@@ -3,6 +3,8 @@ extends Node
 var MainMenu := preload("res://scenes/menus/MainMenu.tscn")
 var main_menu: Control
 
+#@export var starting_menu = Enum.
+
 # For use when the user spawns a confirm dialog
 var confirm_response: bool = false
 var _confirm_menu: AcceptDialog
@@ -10,11 +12,16 @@ var _confirm_menu: AcceptDialog
 func _ready() -> void:
 	main_menu = MainMenu.instantiate()
 	main_menu.name = "MainMenu"
+	
 	var parent = get_node("/root/Main/MenuCanvas")
 
 	# Move to front
 	parent.add_child(main_menu)
 	parent.move_child(main_menu, parent.get_child_count() - 1)
+	
+func get_save_menu() -> SaveMenu:
+	assert(main_menu != null, "main menu is null dude, I can't get the save menu from a null main menu")
+	return main_menu.save_menu
 
 func _input(event: InputEvent):
 	if event.is_action_pressed("ui_menu"):
@@ -26,6 +33,10 @@ func toggle_main_menu():
 func set_visible(visibility: bool) -> void:
 	main_menu.visible = visibility
 	Dialogic.paused = visibility
+	
+	if visibility:
+		get_save_menu().load_saves()
+	
 	print("Is dialogic paused? [%s]" % Dialogic.paused)
 	
 # Make a dialog pop up so a user can confirm an action

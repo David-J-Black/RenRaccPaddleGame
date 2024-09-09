@@ -3,11 +3,12 @@ extends Node
 var FILE_LOCATION = "res://saves/"
 var save_name: String = "save_file"
 
-func load_save_file(save_name: String):
-	if save_name == null:
-		save_name = "save"
+func load_save_file(file_name: String):
+	if file_name == null:
+		assert(save_name != null, "WHAT! The default save name is null!!")
+		file_name = save_name
 
-	var file_address = FILE_LOCATION + save_name + ".json"
+	var file_address = FILE_LOCATION + file_name + ".json"
 	if not FileAccess.file_exists(file_address):
 		print("Invalid save file")
 		return
@@ -27,6 +28,7 @@ func load_save_file(save_name: String):
 	response = _save_convert(parse_result, response)
 
 	GameService.apply_save(response)
+	save_name = file_name
 	print("Finished loading save", JSON.stringify(parse_result, " "))
 	
 func save_game(local_save_name: String) -> void:

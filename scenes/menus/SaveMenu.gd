@@ -1,4 +1,5 @@
 extends Control
+class_name SaveMenu
 
 @onready var save_list: VBoxContainer = $SaveMenu/PanelContainer/MarginContainer/SaveList
 @onready var load_button: Button = $SaveMenu/Buttons/Load
@@ -10,6 +11,9 @@ func _ready() -> void:
 	self.visible = true
 	name_window.visible = false
 	load_saves()
+	
+func _visibility_changed():
+	print("Visibility changed on save menu")
 		
 func load_saves() -> void:
 	for prev_save in save_list.get_children():
@@ -37,13 +41,25 @@ func bring_menu_to_front(menu: Control) -> void:
 	remove_child(menu)
 	add_child(menu)
 	
+# Adds a save to the list of saves
 func _add_file_entry(save_name: String) -> void:
 	var button = Button.new()
 	button.alignment = HORIZONTAL_ALIGNMENT_LEFT
 	button.text = save_name
 	button.name = save_name
+	button.toggle_mode
+	button.focus_mode = Control.FOCUS_ALL
 	button.connect("pressed", Callable(self, "_on_file_pressed").bind(save_name))
+	
+	print("save_name [%s]" % save_name)
+	print(" Parent save name [%s]" % SaveService.save_name)
 	save_list.add_child(button)
+	
+	if save_name == SaveService.save_name:
+		button.grab_focus()
+		selected = save_name
+		print("Focused on [%s]" % save_name)
+	
 	print("list children", save_list.get_children())
 
 
