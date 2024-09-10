@@ -13,7 +13,9 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Location" type="Node2D"]
 script = ExtResource("1_f36im")
+display_name = null
 scene_name = "sardine_scene"
+scene_type = null
 
 [node name="Area2D" type="Area2D" parent="."]
 

@@ -1,6 +1,10 @@
 {
-	"scene_name": "sardine_scene",
-	"scene_type": "DIALOG",
-	"map_events": {},
-	"conditionals": {}
+   "conditionals": {
+
+   },
+   "map_events": {
+
+   },
+   "scene_name": "sardine_scene",
+   "scene_type": "DIALOG"
 }

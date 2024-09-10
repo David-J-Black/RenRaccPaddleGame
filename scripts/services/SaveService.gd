@@ -23,21 +23,29 @@ func load_save_file(file_name: String):
 		print("INVALID SAVE")
 		return
 
+	# Add the save file name to this little baby
+	parse_result["save_name"] = file_name
+
 	# Populate a game scene information object
 	var response := GameSceneInformation.new()
+
+	# Convert the save from a Dictionary to a GameInformation whatever the fuck it's called
 	response = _save_convert(parse_result, response)
 
 	GameService.apply_save(response)
 	save_name = file_name
+
 	print("Finished loading save", JSON.stringify(parse_result, " "))
 	
+# Saves the game to a .json file of the local_save_name
 func save_game(local_save_name: String) -> void:
 	if local_save_name == null:
 		local_save_name = save_name
+
+	Dialogic.Save.save(local_save_name)
 	
 	# Grab the game informationn
 	var game_state: Dictionary = GameService.get_state_dict()
-
 
 	# Grab file
 	var file_address = FILE_LOCATION + local_save_name + ".json"
@@ -98,6 +106,7 @@ func get_save_names() -> Array[String]:
 	print("Saves collected [%s]" % response)
 	return response
 
+# The saving part of the main menu
 func open_save_menu():
 	print("opening save menu...")
 	var SaveMenu: Resource = load("res://scenes/menus/SaveMenu.tscn")
@@ -126,6 +135,7 @@ func _save_convert(dict: Dictionary, object: Object) -> GameSceneInformation:
 				var property_value = dict[key]
 				
 				# If one of the save properties is an enum, stick it in this match statement
+				# The only enum we have RN is scene type lol
 				match key:
 					"scene_type":
 						assert(property_value is String, "INVALID SCENE TYPE")

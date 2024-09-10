@@ -22,7 +22,6 @@ DialogService="*res://scripts/services/DialogService.gd"
 SaveService="*res://scripts/services/SaveService.gd"
 GameService="*res://scripts/services/GameService.gd"
 MenuService="*res://scripts/services/MenuService.gd"
-DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
@@ -56,10 +55,12 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+layout/style_list=[]
+layout/default_style="Default"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [input]
 

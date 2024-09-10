@@ -5,7 +5,6 @@ var _scene_info: GameSceneInformation
 # This should only be called by the save service
 func apply_save(save_state: GameSceneInformation):
 	_scene_info = save_state
-	
 	# Blow up any running dialog scenes
 	#DialogService.stop_dialog()
 	MenuService.set_visible(false)
@@ -14,9 +13,10 @@ func apply_save(save_state: GameSceneInformation):
 	print("Scene type we are applying [%s]" % save_state.scene_type)
 	match(save_state.scene_type):
 		Enum.SceneType.MAP:
+			DialogService.stop_dialog()
 			MapService.load_map(save_state.scene_name)
 		Enum.SceneType.DIALOG:
-			print("Going to load dialog [%s]" % save_state.scene_name)
+			print("Going to load dialog [%s]" % save_state.save_name)
 			DialogService.start_dialog(save_state.scene_name)
 		_:
 			assert("INVALID SCENE TYPE [%s]" % save_state.scene_type) 

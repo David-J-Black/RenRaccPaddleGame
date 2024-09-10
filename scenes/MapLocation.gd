@@ -41,7 +41,7 @@ func _on_resize(map_scale: float):
 
 # Detecting clicks...
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.is_action("mouse_click"):
+	if event is InputEventMouseButton and event.is_action_pressed("mouse_click"):
 		
 		emit_signal("location_selected", name)
 		assert(scene_name != null, "YOU NEED A DIALOG TO ATTACH TO THIS LOCATION!")

@@ -1,35 +1,33 @@
 extends Node
 
 var current_dialog: CanvasLayer
-
-func _ready():
-	# When dialogic ends a timeline, we should redirect to the last known scene if we have one
-	Dialogic.timeline_ended.connect(Callable(self, "dialog_end"))
+var next_timeline: String
 	
 # Start a dialog and specify what scene should play after dialog
 func start_dialog(dialog_name: String) -> void:
-	if Dialogic.current_timeline != null:
-		print("Dialogic already running a timeline! Cannot start dialog")
-		return
-		
-	if (dialog_name != null):
-		GameService.set_scene(dialog_name, Enum.SceneType.DIALOG)
-	else:
-		dialog_name = GameService.get_scene_name()	
-	
-	# Set up dialog scene and add it to right in front of backgraound
-	var dialog: CanvasLayer = Dialogic.start(dialog_name)
-	dialog.name = "dialog"
-	dialog.layer = 1
-	get_node("/root/Main/Background").add_sibling(dialog)
-	
-	MenuService.set_visible(false)
 	Dialogic.paused = false
+	MenuService.set_visible(false)
+	
+	if current_dialog != null:
+		#Dialogic.end_timeline()
+		Dialogic.clear()
+		Dialogic.start_timeline(dialog_name)
+	else:
+		set_current_dialog(Dialogic.start(dialog_name))
+
+	# Make sure our scene name is up to date
+	if dialog_name == null:
+		dialog_name = GameService.get_scene_name()
+				
+func set_current_dialog(timeline: Variant):
+	timeline.name = "dialog"
+	timeline.layer = 1
+	get_node("/root/Main/Background").add_sibling(timeline)
+	current_dialog = timeline
 	
 func stop_dialog() -> void:
-	var dialog: Node = get_node("/root/Main/dialog")
-	if dialog:
-		dialog.queue_free()
+	print("Stopping dialog (JK THIS IS JUST A PRINT)")
+	Dialogic.end_timeline()
 
 func _dialog_end() -> void:
 	print("Dialog ended")
