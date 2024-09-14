@@ -59,9 +59,6 @@ func _add_file_entry(save_name: String) -> void:
 		button.grab_focus()
 		selected = save_name
 		print("Focused on [%s]" % save_name)
-	
-	print("list children", save_list.get_children())
-
 
 func _on_save_pressed() -> void:
 	print("Save was pressed")

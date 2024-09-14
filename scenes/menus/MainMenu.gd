@@ -1,14 +1,21 @@
 extends Control
+class_name MainMenu
 
 var MENU_SCALE: float = 0.9
 
-@onready var save_menu: Control = $MainMenuPanel/MarginContainer/HBoxContainer/Window/SaveMenu
+# This is a dictionary of all the menus in the main menu
+# We can use this to show/hide menus
+@onready var menus: Dictionary = {
+	"save": $MainMenuPanel/MarginContainer/HBoxContainer/Window/SaveMenu,
+	"journal": $MainMenuPanel/MarginContainer/HBoxContainer/Window/JournalMenu
+}
+
+# This is the selected menu
+var selected_menu: String = "save"
+
 @onready var panel: Panel = $MainMenuPanel
 
 func _ready() -> void:
-	assert(save_menu != null, "SAVE MENU IS NULL?!")
-	save_menu.visible = true
-	#load_menu.visible = false
 	_resize()
 	get_viewport().connect("size_changed", Callable(self, "_resize"))
 
@@ -17,4 +24,25 @@ func _resize() -> void:
 	print("Viewport size ", viewport_size)
 	panel.size = viewport_size
 	#position = (viewport_size - Vector2i(size)) / 2
-	print("Main menu's size",size, "pos",position, " position on tree", get_tree().root.get_children())
+
+# Show the save menu
+func _on_save_pressed() -> void:
+	select_menu("save")
+
+# Show the journal menu
+func _on_journal_pressed() -> void:
+	select_menu("journal")
+
+# Select a menu
+# If menu name is null, then double check the selected menu
+# Returns the menu that was selected
+func select_menu(menu_name: String = "") -> Control:
+	if menu_name == "":
+		menu_name = selected_menu
+	for menu in menus.values():
+		if menu != null:
+			menu.visible = false
+			
+	if menus[menu_name] != null:
+		menus[menu_name].visible = true
+	return menus[menu_name]

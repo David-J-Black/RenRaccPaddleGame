@@ -1,7 +1,7 @@
 extends Node
 
-var MainMenu := preload("res://scenes/menus/MainMenu.tscn")
-var main_menu: Control
+var MainMenuScene := preload("res://scenes/menus/MainMenu.tscn")
+var main_menu: MainMenu
 
 #@export var starting_menu = Enum.
 
@@ -10,8 +10,8 @@ var confirm_response: bool = false
 var _confirm_menu: AcceptDialog
 
 func _ready() -> void:
-	main_menu = MainMenu.instantiate()
-	main_menu.name = "MainMenu"
+	main_menu = MainMenuScene.instantiate()
+	main_menu.name = "MainMenuScene"
 	
 	var parent = get_node("/root/Main/MenuCanvas")
 
@@ -21,7 +21,7 @@ func _ready() -> void:
 	
 func get_save_menu() -> SaveMenu:
 	assert(main_menu != null, "main menu is null dude, I can't get the save menu from a null main menu")
-	return main_menu.save_menu
+	return main_menu.menus["save"]
 
 func _input(event: InputEvent):
 	if event.is_action_pressed("ui_menu"):
@@ -33,9 +33,11 @@ func toggle_main_menu():
 func set_visible(visibility: bool) -> void:
 	main_menu.visible = visibility
 	Dialogic.paused = visibility
+	main_menu.select_menu()
+	var save_menu = get_save_menu()
 	
-	if visibility:
-		get_save_menu().load_saves()
+	if visibility and save_menu != null:
+		save_menu.load_saves()
 	
 	print("Is dialogic paused? [%s]" % Dialogic.paused)
 	
