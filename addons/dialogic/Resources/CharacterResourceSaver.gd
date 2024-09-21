@@ -25,7 +25,7 @@ func _save(resource: Resource, path: String = '', flags: int = 0):
 	if not file:
 		# For now, just let editor know that for some reason you can't
 		# read the file.
-		print("[Dialogic] Error opening file:", FileAccess.get_open_error())
+		print("[Dialogic] Error opening file [%s]:" % path, FileAccess.get_open_error())
 		return FileAccess.get_open_error()
 		
 	var result := var_to_str(inst_to_dict(resource))

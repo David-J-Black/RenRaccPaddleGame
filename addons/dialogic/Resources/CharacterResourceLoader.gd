@@ -32,7 +32,7 @@ func _load(path: String, original_path: String, use_sub_threads: bool, cache_mod
 	if not file:
 		# For now, just let editor know that for some reason you can't
 		# read the file.
-		print("[Dialogic] Error opening file:", FileAccess.get_open_error())
+		print("[Dialogic] Error opening file [%s]:" % path, FileAccess.get_open_error())
 		return FileAccess.get_open_error()
 	
 	return dict_to_inst(str_to_var(file.get_as_text()))

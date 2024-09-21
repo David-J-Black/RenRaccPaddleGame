@@ -52,7 +52,7 @@ func _save(resource: Resource, path: String = '', flags: int = 0) -> Error:
 		# Now do the actual saving
 		var file := FileAccess.open(path, FileAccess.WRITE)
 		if !file:
-			print("[Dialogic] Error opening file:", FileAccess.get_open_error())
+			print("[Dialogic] Error opening file [%s]:" % path, FileAccess.get_open_error())
 			return ERR_CANT_OPEN
 		file.store_string(timeline_as_text)
 		file.close()
