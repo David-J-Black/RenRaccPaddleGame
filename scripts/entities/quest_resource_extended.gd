@@ -57,3 +57,21 @@ func advance_objective(
 	active_objectives[new_objective_id] = description
 	sub_objective_completed.emit(current_objective_id, old_description)
 	update()
+
+func serialize() -> Dictionary:
+	var serialized_quest: Dictionary = {
+		"quest_name": self.quest_name,
+		"quest_description": self.quest_description,
+		"quest_id": self.quest_identifier,
+		"active_objectives": self.active_objectives,
+		"completed_objectives": self.completed_objectives
+	}
+
+	return serialized_quest
+
+func de_serialize(quest_data: Dictionary):
+	self.quest_name = quest_data["quest_name"]
+	self.quest_description = quest_data["quest_description"]
+	self.quest_identifier = quest_data["quest_id"]
+	self.active_objectives = quest_data["active_objectives"]
+	self.completed_objectives = quest_data["completed_objectives"]

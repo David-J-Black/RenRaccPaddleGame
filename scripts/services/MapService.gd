@@ -12,8 +12,12 @@ var map_viewer: MapViewer
 func _ready():
 	map_viewer = MapViewerScene.instantiate()
 	map_viewer.name = "MapView"
-	get_node("/root/Main/Background").add_sibling(map_viewer)
-	print("MapView added to scene: Name:", map_viewer.name)
+	var background = get_node("/root/Main/Background")
+	if background:
+		background.add_sibling(map_viewer)
+		print("MapView added to scene: Name:", map_viewer.name)
+	else:
+		printerr("No background in MapView!")
 	
 func load_map(new_map_name: String):
 	if (new_map_name != null):

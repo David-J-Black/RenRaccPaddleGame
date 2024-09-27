@@ -51,5 +51,8 @@ func get_scene_name() -> String:
 	return _scene_info.scene_name
 	
 func set_scene(scene_name: String, scene_type: Enum.SceneType) -> void:
+	assert(scene_name != null, "NO SCENE NAME GIVEN")
+	assert(scene_type != null, "NO SCENE TYPE GIVEN")
+	assert(_scene_info != null, "What? Where is the scene information? Is a scene loaded?")
 	_scene_info.scene_name = scene_name
 	_scene_info.scene_type = scene_type

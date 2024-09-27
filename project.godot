@@ -22,24 +22,33 @@ DialogService="*res://scripts/services/DialogService.gd"
 SaveService="*res://scripts/services/SaveService.gd"
 GameService="*res://scripts/services/GameService.gd"
 MenuService="*res://scripts/services/MenuService.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 QuestSystem="*res://addons/quest-system-1.5.0/addons/quest_system/quest_manager.gd"
 QuestService="*res://scripts/services/QuestService.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
 directories/dch_directory={
-"Sandy": "res://DialogicAssets/Characters/Sandy.dch",
-"Sardine": "res://DialogicAssets/Characters/Sardine.dch",
-"Scrangus": "res://DialogicAssets/Characters/Scrangus.dch"
+"calendula": "res://Characters/calendula.dch",
+"introducer": "res://Characters/introducer.dch",
+"rory": "res://Characters/rory.dch",
+"tk": "res://Characters/tk.dch"
 }
 directories/dtl_directory={
-"sandy_scene": "res://DialogicAssets/timelines/sandy_scene.dtl",
-"sardine_scene": "res://DialogicAssets/timelines/sardine_scene.dtl",
-"scrangus_alley": "res://DialogicAssets/timelines/scrangus_alley.dtl"
+"calendula_pt_1": "res://timelines/calendula_pt_1.dtl",
+"introduction": "res://timelines/introduction.dtl",
+"sandy_scene": "res://timelines/sandy_scene.dtl",
+"sardine_scene": "res://timelines/sardine_scene.dtl",
+"scrangus_alley": "res://timelines/scrangus_alley.dtl",
+"test_scene_rory": "res://timelines/test_scene_rory.dtl",
+"tk_pt_1": "res://timelines/tk_pt_1.dtl"
 }
 glossary/default_case_sensitive=true
-variables={}
+variables={
+"Folder": {},
+"has_key": false,
+"knows_about_key": false
+}
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
@@ -57,8 +66,9 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["", "res://styles/dialogic_style.tres"]
+layout/default_style=""
+layout/end_behaviour=0
 
 [editor_plugins]
 

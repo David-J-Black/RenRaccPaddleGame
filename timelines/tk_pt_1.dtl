@@ -1,0 +1,21 @@
+[background arg="res://images/leavensworth.png" fade="0.0"]
+join tk 3 [animation="Slide In Left"]
+tk (happy): Bro wassup
+update tk (talking)
+label main
+- What were you up to last night?
+	tk (screaming): Bro I saw bigfoot last night, and it made me really scared
+- What were you up to last night?
+	tk (shy): Last week, do you remember that weird swirly rock I found? Well, it hatched
+- Why are you acting all twitchy? [if {has_key} == false][else="hide"]
+	tk (concerned): Dude, I was walking to school and I found a key! It looks like it belonged to a schmuck, do you think it can open anything? Or is it a fake key that grew off a tree? I don't feel comfortable having this much power
+	if {has_key} == false:
+		TK Hands you a house key
+		set {has_key} = true
+- Leave
+	jump end
+jump main
+label end
+tk (happy): See ya!
+[end_timeline]
+[style]

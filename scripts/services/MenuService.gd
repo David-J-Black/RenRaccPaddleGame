@@ -15,9 +15,10 @@ func _ready() -> void:
 	
 	var parent = get_node("/root/Main/MenuCanvas")
 
-	# Move to front
-	parent.add_child(main_menu)
-	parent.move_child(main_menu, parent.get_child_count() - 1)
+	if parent:
+		# Move to front
+		parent.add_child(main_menu)
+		parent.move_child(main_menu, parent.get_child_count() - 1)
 	
 func get_save_menu() -> SaveMenu:
 	assert(main_menu != null, "main menu is null dude, I can't get the save menu from a null main menu")

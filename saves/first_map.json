@@ -1,0 +1,21 @@
+{
+	"scene_name": "introduction",
+	"scene_type": "DIALOG",
+	"map_events": {},
+	"quests": {
+		"active": [
+			{
+				"quest_id": "house_key",
+				"quest_name": "Find the house key",
+				"description": "Find the key to the house",
+				"objectives": [
+					{
+						"id": "where_is_the_key",
+						"description": "Find the key to the house"
+					}
+				]
+			}
+		],
+		"completed": []
+	}
+}
