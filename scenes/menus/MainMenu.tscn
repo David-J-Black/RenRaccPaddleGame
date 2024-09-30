@@ -38,6 +38,10 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.2
 alignment = 1
 
+[node name="NewGame" type="Button" parent="MainMenuPanel/MarginContainer/HBoxContainer/Buttons"]
+layout_mode = 2
+text = "New Game"
+
 [node name="Save" type="Button" parent="MainMenuPanel/MarginContainer/HBoxContainer/Buttons"]
 layout_mode = 2
 text = "Saves"
@@ -67,5 +71,6 @@ layout_mode = 2
 [node name="JournalMenu" parent="MainMenuPanel/MarginContainer/HBoxContainer/Window" instance=ExtResource("4_k0vgj")]
 layout_mode = 2
 
+[connection signal="pressed" from="MainMenuPanel/MarginContainer/HBoxContainer/Buttons/NewGame" to="." method="_on_new_game_pressed"]
 [connection signal="pressed" from="MainMenuPanel/MarginContainer/HBoxContainer/Buttons/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="MainMenuPanel/MarginContainer/HBoxContainer/Buttons/Journal" to="." method="_on_journal_pressed"]

@@ -59,7 +59,7 @@ func save_game(local_save_name: String) -> void:
 
 func new_save_file(file_name: String) -> void:
 	var save: GameSceneInformation = GameSceneInformation.new()
-	save.scene_name = "start"
+	save.scene_name = "introduction"
 	save.scene_type = Enum.SceneType.DIALOG
 	save.map_events = {}
 	save.conditionals = {}

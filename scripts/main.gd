@@ -20,3 +20,4 @@ func _adjust_size():
 	background.size = viewport_size
 	background.z_index = -1
 	
+"res://scenes/main.tscn"

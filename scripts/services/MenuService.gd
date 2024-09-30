@@ -35,14 +35,7 @@ func set_visible(visibility: bool) -> void:
 	main_menu.visible = visibility
 	Dialogic.paused = visibility
 	main_menu.select_menu()
-	var save_menu = get_save_menu()
-	
-	if visibility and save_menu != null:
-		save_menu.load_saves()
-	
-	print("Is dialogic paused? [%s]" % Dialogic.paused)
-	
-# Make a dialog pop up so a user can confirm an action
+
 func make_confirm_menu(text: String) -> bool:
 	_confirm_menu = AcceptDialog.new()
 	_confirm_menu.dialog_text = text
@@ -51,9 +44,7 @@ func make_confirm_menu(text: String) -> bool:
 	main_menu.add_child(_confirm_menu)
 	print("confirm menu position [%s]" % _confirm_menu.position, " Size [%s]" % _confirm_menu.size)
 	
-	await _confirm_menu_response
 	return confirm_response
-	
 	
 # Confirm menu logid:
 # Confirm menu will call one of these two functions
@@ -66,4 +57,4 @@ func _on_cancel():
 	_confirm_menu_response()
 	
 func _confirm_menu_response():
-	pass
+	print("Confirm menu response")

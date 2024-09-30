@@ -24,7 +24,7 @@ func _resize() -> void:
 	print("Viewport size ", viewport_size)
 	panel.size = viewport_size
 	#position = (viewport_size - Vector2i(size)) / 2
-
+	
 # Show the save menu
 func _on_save_pressed() -> void:
 	select_menu("save")
@@ -46,3 +46,7 @@ func select_menu(menu_name: String = "") -> Control:
 	if menus[menu_name] != null:
 		menus[menu_name].visible = true
 	return menus[menu_name]
+
+
+func _on_new_game_pressed() -> void:
+	SaveService.new_save_file("New Game")

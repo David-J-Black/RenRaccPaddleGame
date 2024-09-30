@@ -193,14 +193,16 @@ func start(timeline:Variant, label:Variant="") -> Node:
 ## Method to start a timeline without adding a layout scene.
 ## @timeline can be either a loaded timeline resource or a path to a timeline file.
 ## @label_or_idx can be a label (string) or index (int) to skip to immediatly.
-func start_timeline(timeline:Variant, label_or_idx:Variant = "") -> void:
+func start_timeline(timeline_name:Variant, label_or_idx:Variant = "") -> void:
+	assert(timeline_name != null, "[Dialogic] Timline name is null!")
+	var timeline
 	# load the resource if only the path is given
-	if typeof(timeline) == TYPE_STRING:
+	if typeof(timeline_name) == TYPE_STRING:
 		#check the lookup table if it's not a full file name
-		if (timeline as String).contains("res://"):
-			timeline = load((timeline as String))
+		if (timeline_name as String).contains("res://"):
+			timeline = load((timeline_name as String))
 		else:
-			timeline = DialogicResourceUtil.get_timeline_resource((timeline as String))
+			timeline = DialogicResourceUtil.get_timeline_resource((timeline_name as String))
 
 	if timeline == null:
 		printerr("[Dialogic] There was an error loading this timeline. Check the filename, and the timeline for errors")

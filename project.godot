@@ -70,6 +70,11 @@ layout/style_list=["", "res://styles/dialogic_style.tres"]
 layout/default_style=""
 layout/end_behaviour=0
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/quest-system-1.5.0/addons/quest_system/plugin.cfg")
